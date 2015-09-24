@@ -40,7 +40,7 @@ function _wp_comment_humility() {
 		// Move comments to underneath "Posts"
 		$awaiting_mod = wp_count_comments();
 		$awaiting_mod = $awaiting_mod->moderated;
-		$GLOBALS['submenu']['edit.php'][9] = array( sprintf( __( 'Comments %s' ), "<span class='awaiting-mod count-{$awaiting_mod}'><span class='pending-count'>" . number_format_i18n( $awaiting_mod ) . '</span></span>' ), 'edit_posts', 'edit-comments.php' );
+		$GLOBALS['submenu']['edit.php'][9] = array( sprintf( __( 'Comments %s', 'wp-comment-humility' ), "<span class='awaiting-mod count-{$awaiting_mod}'><span class='pending-count'>" . number_format_i18n( $awaiting_mod ) . '</span></span>' ), 'edit_posts', 'edit-comments.php' );
 	}
 }
 
