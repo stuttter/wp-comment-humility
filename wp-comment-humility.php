@@ -5,7 +5,7 @@
  * Plugin URI:  https://wordpress.org/plugins/wp-comment-humility/
  * Description: Move the "Comments" menu underneath "Posts"
  * Author:      John James Jacoby
- * Version:     0.1.0
+ * Version:     0.1.1
  * Author URI:  https://profiles.wordpress.org/johnjamesjacoby/
  * License:     GPL v2 or later
  * Text Domain: wp-comment-humility
@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 // Actions
 add_action( 'admin_menu',             '_wp_comment_humility' );
 add_action( 'admin_head-comment.php', '_wp_comment_humility_modify_admin_menu_highlight' );
-add_action( 'plugins_loaded', '_wp_comment_humility_i18n' ) );
+add_action( 'plugins_loaded',         '_wp_comment_humility_i18n' );
 
 /**
  * Unset top level "Comments" menu and related submenus, then recreate it under
@@ -77,7 +77,5 @@ function _wp_comment_humility_modify_admin_menu_highlight() {
  * @since 0.1.0
  */
 function _wp_comment_humility_i18n() {
-
-	/* Load the translation of the plugin. */
 	load_plugin_textdomain( 'wp-comment-humility', false, basename( dirname( __FILE__ ) ) . '/languages/' );
 }
